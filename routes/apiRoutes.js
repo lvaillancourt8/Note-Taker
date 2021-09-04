@@ -11,8 +11,6 @@ module.exports = function (app) {
 
     app.post("/api/notes", function (req, res) {
 
-        console.log(req.body);
-
         // Destructuring assignment for the items in req.body
         const { title, text } = req.body;
         console.log(title);
@@ -22,7 +20,7 @@ module.exports = function (app) {
         const newNote = {
             title,
             text,
-            note_id: uuid(),
+            id: uuid(),
         };
 
         readAndAppend(newNote, './db/db.json');
@@ -30,35 +28,21 @@ module.exports = function (app) {
         res.json(true);
     });
 
-//     // POST Route for submitting a note
-//     app.post('/notes', (req, res) => {
-    
-//     // Log that a POST request was received
-//     console.info(`${req.method} request received to submit feedback`);
-  
+    app.delete("/api/notes/:id", function (req, res) {
+        console.log(req.body);
 
-  
-//     // If all the required properties are present
-//     if (noteTitle && noteText) {
-      
-//         // Variable for the object we will save
-//       const newNote = {
-//         noteTitle,
-//         noteText,
-//         note_id: uuid(),
-//       };
-  
-//       readAndAppend(newNote, './db/db.json');
-  
-//       const response = {
-//         status: 'success',
-//         body: newNote,
-//       };
-  
-//       res.json(response);
-//     } else {
-//       res.json('Error in posting feedback');
-//     }
-//   });
+        const noteId = id;
+        //we need to get the correct object
+        for (var i = 0; i < notesData.length; i++) {
+            if (notesData[i].id == noteId) {
+
+                notesData.splice(i,1);
+
+                break; //Stop this loop, we found it!
+            }
+
+        }
+        res.json(true);
+    });
 
 };

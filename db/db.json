@@ -2,11 +2,21 @@
     {
         "title": "note title",
         "text": "note text\n",
-        "note_id": "500f"
+        "id": "500f"
     },
     {
         "title": "This is a new note",
         "text": "This is the text of the new note",
-        "note_id": "aa21"
+        "id": "aa21"
+    },
+    {
+        "title": "Walk the dogs",
+        "text": "they need to go",
+        "id": "924b"
+    },
+    {
+        "title": "New Note Again",
+        "text": "This is some text",
+        "id": "34cc"
     }
 ]
