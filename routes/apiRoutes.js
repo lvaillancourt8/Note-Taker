@@ -1,5 +1,5 @@
 const notesData = require('../db/db.json');
-const { readFromFile, readAndAppend } = require('../helpers/fsUtils');
+const { readFromFile, readAndAppend, writeToFile } = require('../helpers/fsUtils');
 const uuid = require('../helpers/uuid');
 
 module.exports = function (app) {
@@ -31,12 +31,13 @@ module.exports = function (app) {
     app.delete("/api/notes/:id", function (req, res) {
         console.log(req.body);
 
-        const noteId = id;
+        const {id} = req.params;
         //we need to get the correct object
         for (var i = 0; i < notesData.length; i++) {
-            if (notesData[i].id == noteId) {
+            if (notesData[i].id == id) {
 
                 notesData.splice(i,1);
+                writeToFile('./db/db.json', notesData);
 
                 break; //Stop this loop, we found it!
             }
