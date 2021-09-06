@@ -13,8 +13,6 @@ module.exports = function (app) {
 
         // Destructuring assignment for the items in req.body
         const { title, text } = req.body;
-        console.log(title);
-        console.log(text);
 
         // Variable for the object we will save adding in a unique id
         const newNote = {
