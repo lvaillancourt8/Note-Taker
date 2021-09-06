@@ -4,7 +4,7 @@ Bootcamp Activity Week 11 - Program the back end of a Note Taker Application
 ## Project Links
 Link to the GitHub Repository: [GitHub Repo](https://github.com/lvaillancourt8/Note-Taker)
 
-Link to the live application: [Live App]()
+Link to the live application: [Live App](https://lv-note-taker.herokuapp.com/)
 
 ## User Story
 
