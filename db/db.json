@@ -1,1 +1,22 @@
-[]
+[
+    {
+        "title": "Grocery List",
+        "text": "Apples\nBread\nCheese\nMilk\nDog Food",
+        "id": "f423"
+    },
+    {
+        "title": "Make Vet Appointment",
+        "text": "Pippin needs to get his teeth cleaned",
+        "id": "51dc"
+    },
+    {
+        "title": "Pay the Electric Bill",
+        "text": "Amount due is $57.00",
+        "id": "1c0c"
+    },
+    {
+        "title": "Do your coding homework",
+        "text": "Homework is due on Wednesday!!!",
+        "id": "5c4b"
+    }
+]

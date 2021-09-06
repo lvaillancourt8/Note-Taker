@@ -16,33 +16,33 @@ module.exports = function (app) {
         console.log(title);
         console.log(text);
 
-        // Variable for the object we will save
+        // Variable for the object we will save adding in a unique id
         const newNote = {
             title,
             text,
             id: uuid(),
         };
 
+        //adding the new note to the database
         readAndAppend(newNote, './db/db.json');
         
         res.json(true);
     });
 
     app.delete("/api/notes/:id", function (req, res) {
-        console.log(req.body);
 
         const {id} = req.params;
-        //we need to get the correct object
+        //search for the correct object to delete
         for (var i = 0; i < notesData.length; i++) {
             if (notesData[i].id == id) {
-
+                
+                //remove the note from the array
                 notesData.splice(i,1);
-                writeToFile('./db/db.json', notesData);
-
-                break; //Stop this loop, we found it!
+                break;
             }
-
         }
+        //write the new array to the database
+        writeToFile('./db/db.json', notesData);
         res.json(true);
     });
 
